@@ -1,9 +1,6 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Mail } from "lucide-react"
-import Image from "next/image"
-import { Badge } from "@/components/ui/badge"
+import { Phone } from "lucide-react"
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
   <svg className={className} fill="currentColor" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -26,124 +23,103 @@ const GmailIcon = ({ className }: { className?: string }) => (
   </svg>
 )
 
-
-
 export function CTA() {
   return (
-    <section id="contact" className="relative py-32 px-4 overflow-hidden">
-      {/* Background gradients linking to the rest of the page */}
-      <div className="absolute inset-0 bg-background z-0" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#1c1e45]/60 to-background z-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(107,115,254,0.15)_0%,transparent_100%)] z-0" />
+    <section id="contact" className="relative py-32 px-4 overflow-hidden bg-background">
+      {/* Fondo horizonte ascendente: Resplandor que emerge desde la base hacia la tarjeta */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[1100px] h-[550px] bg-[radial-gradient(ellipse_at_bottom,rgba(107,115,254,0.28)_0%,rgba(74,83,224,0.12)_40%,transparent_75%)] blur-[30px]" />
+        <div className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-gradient-to-t from-[#6b73fe]/30 via-[#8a90fe]/15 to-transparent rounded-full blur-[80px]" />
+      </div>
 
       <div className="relative z-10 max-w-5xl mx-auto">
-        {/* Encabezado Principal Integrado */}
-        <div className="relative z-10 w-full flex flex-col items-center justify-center mb-16 px-4">
-          <h1
-            className="text-[18vw] md:text-[14vw] lg:text-[7vw] tracking-tighter text-center whitespace-nowrap bg-clip-text text-primary leading-[0.8] pointer-events-none select-none drop-shadow-sm pb-4 md:pb-6 gradient-text"
-
-          >
-            Tus redes sociales son tu
-            <br />
-            vidriera digital
-          </h1>
-
-          <p className="text-lg md:text-2xl font-light text-center max-w-3xl mt-0 md:-mt-4 lg:-mt-4 tracking-wide drop-shadow-md relative z-20">
-            ¿Estás listo para transformarlas? Agenda una consulta y descubre cómo conectar de verdad con tu audiencia ideal.
-          </p>
-        </div>
-        {/* <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4 px-4 py-1.5 text-sm border-primary/30 text-primary bg-primary/5 backdrop-blur-sm">
-            Contacto
-          </Badge>
-          <h2 className="text-4xl sm:text-5xl md:text-5xl font-bold text-foreground mb-6 tracking-tight text-balance">
-            Tus redes sociales son tu
-            <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-accent to-fuchsia-500">
-              {" "}vidriera digital
+        {/* Encabezado unificado estilo Hero / About */}
+        <div className="w-full flex flex-col items-center justify-center mb-16 px-4 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-white/10 mb-4">
+            <Phone className="w-3.5 h-3.5 text-[#5960e6]" />
+            <span className="text-xs font-medium uppercase tracking-wider text-foreground/80">
+              Contacto
             </span>
-            .
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            ¿Estás listo para transformarlas? Agenda una consulta y descubre cómo conectar de verdad con tu audiencia ideal.
-          </p>
-        </div> */}
-
-        <div className="relative glass-card bg-background/50 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-14 text-center overflow-hidden border border-white/5 shadow-2xl group lg:-mt-12">
-          {/* Cinematic Background Glow */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-            {/* Core glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-tr from-[#6b73fe]/20 via-[#8f95ff]/10 to-[#4a53e0]/20 blur-[100px] rounded-full opacity-60 group-hover:opacity-80 transition-opacity duration-1000" />
-            {/* Top and bottom subtle borders */}
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/10 to-transparent" />
           </div>
 
-          <div className="relative z-10 flex flex-col items-center">
-            {/* Contact Image/Icon */}
-            <h2 className="text-4xl sm:text-5xl md:text-3xl  text-foreground mb-6 tracking-tight text-balance">
-              Podes contactarme mediante:
-              <br className="hidden sm:block" />
-            </h2>
+          <h2 className="text-[11vw] sm:text-[8vw] md:text-[5.5vw] lg:text-[72px] font-medium tracking-tight text-center leading-[1.08] pointer-events-none select-none drop-shadow-sm pb-2 mb-4">
+            <span className="bg-gradient-to-b from-white via-zinc-100 to-zinc-400 bg-clip-text text-transparent">
+              Tus redes sociales,
+            </span>
+            <br />
+            <span className="gradient-text font-semibold">tu vidriera digital</span>
+          </h2>
 
-            {/* Premium CTA Buttons */}
-            <div className="flex flex-col sm:flex-row w-full max-w-2xl max-h-16 items-stretch justify-center gap-6 sm:gap-6">
+          <p className="text-base sm:text-lg md:text-xl font-light text-zinc-400 text-center max-w-2xl mx-auto tracking-wide leading-relaxed">
+            ¿Listo para transformar tu presencia online? Escribime y diseñemos una estrategia a la medida de tu marca.
+          </p>
+        </div>
+
+        {/* Tarjeta de Contacto Glassmorphism */}
+        <div className="relative glass-card rounded-[2.5rem] p-8 md:p-14 text-center overflow-hidden border border-white/10 shadow-2xl group">
+          {/* Resplandor ambiental interno suave */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-tr from-[#6b73fe]/20 to-[#8a90fe]/15 blur-[100px] rounded-full pointer-events-none opacity-60 group-hover:opacity-80 transition-opacity duration-700" />
+
+          <div className="relative z-10 flex flex-col items-center">
+            <p className="text-sm uppercase tracking-widest text-zinc-400 mb-8 font-medium">
+              Elegí el canal que te resulte más cómodo:
+            </p>
+
+            {/* Botones de acción directa */}
+            <div className="flex flex-col sm:flex-row w-full max-w-2xl items-stretch justify-center gap-4 sm:gap-5">
               <a
                 href="https://wa.me/3329528141?text=Hola!%20Me%20interesan%20tus%20servicios"
                 target="_blank"
                 rel="noreferrer"
-                className="flex-1 group/btn relative flex items-center justify-center gap-4 px-6 py-5 rounded-2xl bg-background/60 border border-border/40 backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:bg-green-500/10 hover:border-green-500/50 hover:shadow-[0_0_30px_rgba(34,197,94,0.15)]"
+                className="flex-1 group/btn relative flex items-center justify-center gap-3.5 px-6 py-4.5 rounded-2xl glass border border-white/10 hover:border-emerald-500/40 hover:bg-emerald-500/10 hover:shadow-[0_0_30px_rgba(16,185,129,0.18)] transition-all duration-300 hover:scale-[1.02]"
               >
-                <WhatsAppIcon className="w-5 h-5 text-gray-400 group-hover/btn:text-green-500 transition-colors" />
-                <span className=" tracking-wide text-foreground group-hover/btn:text-white transition-colors text-md">WhatsApp</span>
+                <WhatsAppIcon className="w-5 h-5 text-zinc-400 group-hover/btn:text-emerald-400 transition-colors" />
+                <span className="text-sm sm:text-base font-medium tracking-wide text-zinc-200 group-hover/btn:text-white transition-colors">
+                  WhatsApp
+                </span>
               </a>
 
               <a
                 href="https://www.instagram.com/denicreando/"
                 target="_blank"
                 rel="noreferrer"
-                className="flex-1 group/btn relative flex items-center justify-center gap-4 px-4 py-5 rounded-2xl bg-background/60 border border-border/40 backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:bg-fuchsia-500/10 hover:border-fuchsia-500/50 hover:shadow-[0_0_30px_rgba(217,70,239,0.15)]"
+                className="flex-1 group/btn relative flex items-center justify-center gap-3.5 px-6 py-4.5 rounded-2xl glass border border-white/10 hover:border-fuchsia-500/40 hover:bg-fuchsia-500/10 hover:shadow-[0_0_30px_rgba(217,70,239,0.18)] transition-all duration-300 hover:scale-[1.02]"
               >
-                <InstagramIcon className="w-5 h-5 text-gray-400 group-hover/btn:text-fuchsia-500 transition-colors" />
-
-                <span className="tracking-wide text-foreground group-hover/btn:text-white transition-colors text-md">Instagram</span>
+                <InstagramIcon className="w-5 h-5 text-zinc-400 group-hover/btn:text-fuchsia-400 transition-colors" />
+                <span className="text-sm sm:text-base font-medium tracking-wide text-zinc-200 group-hover/btn:text-white transition-colors">
+                  Instagram
+                </span>
               </a>
 
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=denicreando@gmail.com&su=Consulta"
                 target="_blank"
                 rel="noreferrer"
-                className="flex-1 group/btn relative flex items-center justify-center gap-4 px-6 py-5 rounded-2xl bg-background/60 border border-border/40 backdrop-blur-md transition-all duration-300 hover:scale-[1.02] hover:bg-red-500/10 hover:border-red-500/50 hover:shadow-[0_0_30px_rgba(239,68,68,0.15)]"
+                className="flex-1 group/btn relative flex items-center justify-center gap-3.5 px-6 py-4.5 rounded-2xl glass border border-white/10 hover:border-indigo-500/40 hover:bg-indigo-500/10 hover:shadow-[0_0_30px_rgba(99,102,241,0.18)] transition-all duration-300 hover:scale-[1.02]"
               >
-                <GmailIcon className="w-5 h-5 text-gray-400 group-hover/btn:text-red-500 transition-colors" />
-                <span className="tracking-wide text-foreground group-hover/btn:text-white transition-colors text-md">Gmail</span>
+                <GmailIcon className="w-5 h-5 text-zinc-400 group-hover/btn:text-indigo-400 transition-colors" />
+                <span className="text-sm sm:text-base font-medium tracking-wide text-zinc-200 group-hover/btn:text-white transition-colors">
+                  Gmail
+                </span>
               </a>
             </div>
 
-            {/* Trust badges */}
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-sm font-medium tracking-wide text-muted-foreground/80">
-              <div className="flex items-center gap-2.5 bg-background/40 px-4 py-2 rounded-full border border-border/30">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#6BBCFE] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#6BBCFE]"></span>
-                </span>
-                Respuesta en 24h
+            {/* Badges de confianza / Disponibilidad */}
+            <div className="mt-12 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-medium tracking-wide text-zinc-400">
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full glass border border-white/10">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
+                Respuesta en menos de 24h
               </div>
-              <div className="flex items-center gap-2.5 bg-background/40 px-4 py-2 rounded-full border border-border/30">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#6BBCFE] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#6B73FE]"></span>
-                </span>
-                Sin compromiso
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full glass border border-white/10">
+                <span className="w-2 h-2 rounded-full bg-[#6b73fe] animate-pulse shadow-[0_0_8px_rgba(107,115,254,0.8)]" />
+                Sin compromiso inicial
               </div>
-              <div className="flex items-center gap-2.5 bg-background/40 px-4 py-2 rounded-full border border-border/30">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#AD6BFE] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#AD6BFE]"></span>
-                </span>
+              <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full glass border border-white/10">
+                <span className="w-2 h-2 rounded-full bg-indigo-400 animate-pulse shadow-[0_0_8px_rgba(129,140,248,0.8)]" />
                 100% Personalizado
               </div>
             </div>
+
           </div>
         </div>
       </div>

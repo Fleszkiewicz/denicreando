@@ -30,10 +30,11 @@ export function Hero() {
           <span className="text-sm font-medium text-foreground/80">Social Media Manager</span>
         </div> */}
 
-        {/* Logo / Name */}
+        {/* Logo / Name 
         <div className="mb-2">
           <span className="text-lg lg:text-1xl text-foreground/80">Denise Degese</span>
         </div>
+        */}
 
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-2">
           <Sparkles className="w-4 h-4 text-[#5960e6]" />
@@ -42,34 +43,34 @@ export function Hero() {
 
 
         {/* Headline */}
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-9xl font-semibold mb-2 leading-tight  text-balance ">
-          <span className="text-foreground">Si no te ven, </span>
-          <span className="gradient-text">no existís.</span>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[110px] font-medium leading-tight text-balance">
+          <span className="bg-gradient-to-b from-white via-zinc-100 to-zinc-400 bg-clip-text text-transparent">Si no te ven, </span>
+          <span className="gradient-text font-semibold">no existís.</span>
         </h1>
-        <h1 className="text-2xl sm:text-2xl md:text-3xl lg:text-5xl mb-6 font-light leading-tight  text-balance">
-          <span className="text-foreground">Estás a una </span>
+        <h1 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl mb-18 font-light leading-tight -mt-2 text-balance">
+          <span className="bg-gradient-to-b from-white via-zinc-100 to-zinc-400 bg-clip-text text-transparent">Estás a una </span>
           <span className="gradient-text">estrategia</span>
-          <span className="text-foreground"> de cambiarlo todo.</span>
+          <span className="bg-gradient-to-b from-white via-zinc-100 to-zinc-400 bg-clip-text text-transparent"> de cambiarlo todo.</span>
         </h1>
 
-        {/* Subtitle */}
-        <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed text-pretty">
+        {/* Subtitle 
+        <p className="text-lg sm:text-sm mt-16 text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed text-pretty">
           Estrategia digital, gestión de redes sociales y creación de contenido que transforma seguidores en una comunidad comprometida con tu marca.
         </p>
+        */}
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Button
             size="lg"
-            className="glow-primary px-8 py-6 text-base font-semibold rounded-xl bg-[#5960e6] text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:scale-105"
+            className="glow-primary px-8 py-6 text-base font-ligth rounded-full bg-[#5960e6] text-primary-foreground hover:bg-primary/90 transition-all duration-300 hover:scale-105 cursor-pointer"
           >
-            Contactame
-            <ArrowDown className="w-5 h-5 ml-2" />
+            Contactar
           </Button>
           <Button
             variant="outline"
             size="lg"
-            className="px-8 py-6 text-base font-semibold rounded-xl border-border/50 bg-secondary/50 text-foreground hover:bg-secondary hover:border-primary/30 transition-all duration-300"
+            className="px-8 py-6 text-base font-ligth rounded-full border-border/50 bg-secondary/50 text-foreground hover:bg-secondary hover:border-primary/30 transition-all duration-300 cursor-pointer"
           >
             Ver más
           </Button>

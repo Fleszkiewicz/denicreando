@@ -6,31 +6,25 @@ export interface Client {
   gradient: string;
   image: string;
   logo: string;
+  slug?: string; // 👈 Nuevo campo
   gallery?: string[];
 }
+
+// URL base de tu bucket público en Cloudflare R2
+const R2_BASE_URL = "https://pub-d36f19332df947f4a9b9265a1be7b813.r2.dev/clients";
 
 export const clients: Client[] = [
   {
     name: "Al Río",
     role: "Restó",
+    slug: "3-alrio",
     quote: "Rio y Gastronomía juntos.",
-    description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.",
+    description: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr...",
     gradient: "from-orange-500 via-orange-400/5",
-    image: "/images/alrio.jpg",
-    logo: "/images/clientes/alrio/logo.jpg",
-    gallery: [
-      "/images/clientes/alrio/1.jpg",
-      "/images/clientes/alrio/2.jpg",
-      "/images/clientes/alrio/3.jpg",
-      "/images/clientes/alrio/4.jpg",
-      "/images/clientes/alrio/5.jpg",
-      "/images/clientes/alrio/6.jpg",
-      "/images/clientes/alrio/1.mp4",
-      "/images/clientes/alrio/8.jpg",
-      "/images/clientes/alrio/2.mp4",
-      "/images/clientes/alrio/10.jpg",
-      "/images/clientes/alrio/12.jpg"
-    ]
+
+    // 👇 Llamas específicamente al archivo dentro de la carpeta del cliente en R2
+    image: `${R2_BASE_URL}/3-alrio/2.jpg`,
+    logo: `${R2_BASE_URL}/3-alrio/logo.jpg`,
   },
   {
     name: "Brutus",

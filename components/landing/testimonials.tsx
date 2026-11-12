@@ -1,13 +1,13 @@
 "use client"
 
 import Image from "next/image"
-import { Badge } from "@/components/ui/badge"
+import { MessagesSquare } from "lucide-react"
 
 const testimonials = [
   {
     name: "Carlos Mendoza",
     role: "CEO, TechFlow",
-    content: "María transformó completamente nuestra presencia en redes. En 3 meses duplicamos seguidores y triplicamos el engagement.",
+    content: "Denise transformó completamente nuestra presencia en redes. En 3 meses duplicamos seguidores y triplicamos el engagement.",
     initials: "CM",
   },
   {
@@ -19,25 +19,25 @@ const testimonials = [
   {
     name: "Diego Torres",
     role: "Marketing Director",
-    content: "Los resultados hablan por sí solos. Mejor ROI en redes sociales que hemos tenido en años.",
+    content: "Los resultados hablan por sí solos. El mejor retorno en redes sociales que hemos tenido en años de trabajo continuo.",
     initials: "DT",
   },
   {
     name: "Fernanda Raspanti",
     role: "Terapeuta",
-    content: "Desde que trabajo con María, mi marca ha crecido exponencialmente. Su dedicación es impresionante.",
+    content: "Desde que trabajo con Denise, mi marca ha crecido exponencialmente. Su dedicación y sensibilidad son impresionantes.",
     initials: "FR",
   },
   {
     name: "Miguel Ángel",
     role: "CEO, Pulse Media",
-    content: "La mejor inversión que hicimos. Nuestra comunidad creció un 400% en 6 meses.",
+    content: "La mejor inversión que hicimos. Nuestra comunidad creció de manera orgánica y las consultas se multiplicaron.",
     initials: "MA",
   },
   {
     name: "Valeria Gómez",
     role: "Directora Creativa",
-    content: "Resultados reales desde el primer mes. Nuestra audiencia creció y el engagement se disparó.",
+    content: "Resultados reales desde el primer mes. Nuestra audiencia creció y el engagement se disparó por completo.",
     initials: "VG",
   },
 ]
@@ -50,15 +50,16 @@ export function Testimonials() {
         .t-section {
           position: relative;
           overflow: hidden;
-          padding: 6rem 1rem 3rem;
-background: radial-gradient(
-  ellipse 60% 50% at 50% 60%,
-  #6b73fe 0%,
-  #4f55c5 20%,
-  #2c2f66 40%,
-  #0b0c1a 80%,
-  #000000 100%
-);        }
+          padding: 7rem 1rem 4rem;
+          background: radial-gradient(
+            ellipse 70% 55% at 50% 55%,
+            rgba(107, 115, 254, 0.42) 0%,
+            rgba(74, 83, 224, 0.22) 28%,
+            rgba(24, 26, 60, 0.5) 55%,
+            rgba(8, 9, 20, 0.95) 80%,
+            #000000 100%
+          );
+        }
 
         /* Full width bottom shadow to fade out the image smoothly across the whole page */
         .t-section::after {
@@ -67,45 +68,16 @@ background: radial-gradient(
           bottom: 0;
           left: 0;
           right: 0;
-          height: 600px;
+          height: 500px;
           background: linear-gradient(
             to bottom,
             transparent 0%,
-            rgba(5,0,8,0.3) 60%,
-            rgba(5,0,8,0.85) 80%,
-            rgba(5,0,8,1) 85%
+            rgba(0, 0, 0, 0.3) 45%,
+            rgba(0, 0, 0, 0.85) 80%,
+            #000000 100%
           );
           pointer-events: none;
           z-index: 20;
-        }
-
-        /* ─── Watermark ─── */
-        .t-watermark {
-          position: absolute;
-          inset: 0;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          pointer-events: none;
-          z-index: 0;
-          overflow: hidden;
-        }
-        .t-watermark span {
-          font-size: clamp(7rem, 22vw, 20rem);
-          font-weight: 900;
-          letter-spacing: -0.04em;
-          white-space: nowrap;
-          line-height: 1;
-          user-select: none;
-          background: linear-gradient(
-            180deg,
-            rgb(107,115,254) 0%,
-            rgba(107, 115, 254, 0.47) 20%,
-            transparent 80%
-          );
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
         }
 
         /* ─── Inner ─── */
@@ -113,26 +85,6 @@ background: radial-gradient(
           position: relative;
           z-index: 1;
           max-width: 1280px;
-          margin: 0 auto;
-        }
-
-        /* ─── Header ─── */
-        .t-header {
-          text-align: center;
-          margin-bottom: 3.5rem;
-        }
-        .t-header h2 {
-          font-size: clamp(2rem, 5vw, 3.75rem);
-          font-weight: 800;
-          color: #fff;
-          margin: 0.75rem 0 0.5rem;
-          letter-spacing: -0.025em;
-          line-height: 1.1;
-        }
-        .t-header p {
-          color: rgba(196,181,253,0.7);
-          font-size: 1rem;
-          max-width: 34rem;
           margin: 0 auto;
         }
 
@@ -162,97 +114,104 @@ background: radial-gradient(
           width: 100%;
           height: auto;
           display: block;
-          /* multiply blends white bg perfectly on any dark surface */
           mix-blend-mode: multiply;
         }
 
         /* ─── Floating cards ─── */
         .t-card {
           position: absolute;
-          background: linear-gradient(145deg, rgba(74,83,224,0.6) 0%, rgba(40,45,150,0.75) 45%, rgba(10,12,25,0.9) 100%);
-          border: 1px solid rgba(107,115,254,0.22);
-          border-radius: 1rem;
-          padding: 1rem 1.15rem;
-          backdrop-filter: blur(16px);
+          background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(22, 24, 52, 0.75) 50%, rgba(10, 12, 26, 0.92) 100%);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          border-radius: 1.25rem;
+          padding: 1.15rem 1.25rem;
+          backdrop-filter: blur(20px);
           box-shadow:
-            0 12px 40px rgba(0,0,0,0.5),
-            inset 0 1px 0 rgba(107,115,254,0.18);
-          width: 220px;
-          transition: transform 0.35s ease, box-shadow 0.35s ease;
+            0 16px 40px -10px rgba(0, 0, 0, 0.6),
+            0 0 25px -5px rgba(107, 115, 254, 0.15),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15);
+          width: 240px;
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
           z-index: 10;
         }
         .t-card:hover {
           transform: translateY(-6px) scale(1.03) !important;
-          box-shadow: 0 20px 56px rgba(74,83,224,0.45), inset 0 1px 0 rgba(107,115,254,0.35);
+          border-color: rgba(107, 115, 254, 0.5);
+          box-shadow:
+            0 24px 60px -10px rgba(0, 0, 0, 0.8),
+            0 0 35px 0 rgba(107, 115, 254, 0.35),
+            inset 0 1px 0 rgba(255, 255, 255, 0.25);
         }
 
-        /* cards: efecto esparcido rodeando el celular */
-        .t-card-0 { top: 8%;    left:  18%; animation: floatA 4.2s ease-in-out infinite 0s; }
-        .t-card-1 { top: 32%;   left:  5%; animation: floatB 5.1s ease-in-out infinite 0.6s; }
-        .t-card-2 { top: 58%;   left:  13%;  animation: floatA 4.8s ease-in-out infinite 1.2s; }
-        .t-card-3 { top: 8%;    right: 11%;  animation: floatB 4.6s ease-in-out infinite 0.3s; }
-        .t-card-4 { top: 31%;   right: 2%; animation: floatA 5.0s ease-in-out infinite 0.9s; }
+        /* cards: efecto esparcido simétrico alrededor del celular */
+        .t-card-0 { top: 8%;    left: 17%; animation: floatA 4.2s ease-in-out infinite 0s; }
+        .t-card-1 { top: 32%;   left: 4%;  animation: floatB 5.1s ease-in-out infinite 0.6s; }
+        .t-card-2 { top: 58%;   left: 12%; animation: floatA 4.8s ease-in-out infinite 1.2s; }
+        .t-card-3 { top: 8%;    right: 11%; animation: floatB 4.6s ease-in-out infinite 0.3s; }
+        .t-card-4 { top: 31%;   right: 2%;  animation: floatA 5.0s ease-in-out infinite 0.9s; }
         .t-card-5 { top: 54%;   right: 14%; animation: floatB 4.4s ease-in-out infinite 1.5s; }
 
         @keyframes floatA {
-          0%,100% { transform: translateY(0px); }
+          0%, 100% { transform: translateY(0px); }
           50%      { transform: translateY(-10px); }
         }
         @keyframes floatB {
-          0%,100% { transform: translateY(0px); }
+          0%, 100% { transform: translateY(0px); }
           50%      { transform: translateY(-7px); }
         }
 
         .t-card-head {
           display: flex;
           align-items: center;
-          gap: 0.55rem;
-          margin-bottom: 0.55rem;
+          gap: 0.65rem;
+          margin-bottom: 0.65rem;
         }
         .t-avatar {
-          width: 2.1rem;
-          height: 2.1rem;
+          width: 2.25rem;
+          height: 2.25rem;
           border-radius: 50%;
-          background: linear-gradient(135deg, #8f95ff, #4a53e0);
-          border: 1.5px solid rgba(107,115,254,0.5);
+          background: linear-gradient(135deg, #8a90fe, #5960e6);
+          border: 1.5px solid rgba(255, 255, 255, 0.25);
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 0.65rem;
+          font-size: 0.7rem;
           font-weight: 700;
-          color: #ede9fe;
+          color: #ffffff;
           flex-shrink: 0;
+          box-shadow: 0 4px 12px rgba(90, 96, 230, 0.35);
         }
         .t-name {
-          font-size: 0.78rem;
+          font-size: 0.82rem;
           font-weight: 600;
-          color: #ede9fe;
+          color: #ffffff;
           margin: 0;
           line-height: 1.3;
         }
         .t-role {
-          font-size: 0.65rem;
-          color: rgba(167,139,250,0.65);
+          font-size: 0.68rem;
+          color: rgba(161, 161, 170, 0.85);
           margin: 0;
           line-height: 1.3;
+          font-weight: 400;
         }
         .t-content {
-          font-size: 0.75rem;
-          color: rgba(233,213,255,0.82);
+          font-size: 0.76rem;
+          color: rgba(228, 228, 231, 0.9);
           line-height: 1.6;
-          margin: 0 0 0.45rem;
+          margin: 0 0 0.5rem;
+          font-weight: 300;
         }
         .t-stars {
-          font-size: 0.68rem;
-          color: #8f95ff;
-          letter-spacing: 0.04em;
+          font-size: 0.7rem;
+          color: #9da5ff;
+          letter-spacing: 0.08em;
         }
 
         /* ─── Mobile grid ─── */
         .t-mobile {
           display: grid;
           grid-template-columns: 1fr;
-          gap: 0.875rem;
+          gap: 1rem;
         }
         @media (min-width: 560px) {
           .t-mobile { grid-template-columns: 1fr 1fr; }
@@ -262,48 +221,38 @@ background: radial-gradient(
         }
 
         .t-mobile-card {
-          background: linear-gradient(145deg, rgba(74,83,224,0.55) 0%, rgba(40,45,150,0.7) 45%, rgba(10,12,25,0.88) 100%);
-          border: 1px solid rgba(107,115,254,0.2);
-          border-radius: 1rem;
-          padding: 1rem 1.15rem;
-          backdrop-filter: blur(12px);
-          box-shadow: 0 8px 28px rgba(0,0,0,0.4), inset 0 1px 0 rgba(107,115,254,0.14);
+          background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(22, 24, 52, 0.75) 50%, rgba(10, 12, 26, 0.92) 100%);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          border-radius: 1.25rem;
+          padding: 1.25rem;
+          backdrop-filter: blur(16px);
+          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.12);
         }
       `}</style>
 
       <section id="testimonials" className="t-section">
-        {/* Watermark */}
-        {/* <div className="t-watermark">
-          <span>GRACIAS</span>
-        </div> */}
-
         <div className="t-inner">
-          <div className="relative z-10 w-full flex flex-col items-center justify-center mb-16 px-4">
-            <h1
-              className="text-[18vw] md:text-[14vw] lg:text-[9vw] tracking-tighter text-center whitespace-nowrap bg-clip-text gradient-text leading-[0.8] pointer-events-none select-none drop-shadow-sm pb-4 md:pb-6"
 
-            >
-              Comentarios
+          {/* Encabezado unificado estilo Hero / About */}
+          <div className="w-full flex flex-col items-center justify-center mb-16 px-4 text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border border-white/10 mb-4">
+              <MessagesSquare className="w-3.5 h-3.5 text-[#5960e6]" />
+              <span className="text-xs font-medium uppercase tracking-wider text-foreground/80">
+                Testimonios
+              </span>
+            </div>
 
-            </h1>
+            <h2 className="text-[12vw] sm:text-[9vw] md:text-[6vw] lg:text-[75px] font-medium tracking-tight leading-[1.05] mb-4">
+              <span className="bg-gradient-to-b from-white via-zinc-100 to-zinc-400 bg-clip-text text-transparent">
+                Lo que dicen{" "}
+              </span>
+              <span className="gradient-text font-semibold">mis clientes</span>
+            </h2>
 
-            <p className="text-lg md:text-3xl font-light text-center max-w-7xl -mt-4 tracking-wide drop-shadow-md relative z-20">
-              De clientes satisfechos.
+            <p className="text-base sm:text-lg md:text-xl font-light text-zinc-400 max-w-2xl mx-auto tracking-wide leading-relaxed">
+              Historias reales de marcas y proyectos que transformaron su presencia digital y multiplicaron sus resultados.
             </p>
           </div>
-          {/* Header */}
-          {/* <div className="t-header">
-            <Badge
-              variant="outline" className="mb-4 px-4 py-1.5 text-sm border-primary/30 text-primary bg-primary/5">
-              Testimonios
-            </Badge>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Lo que dicen mis clientes
-            </h2>
-            <h3 className="text-muted-foreground max-w-2xl mx-auto">
-              Historias reales de marcas que han transformado su presencia digital.
-            </h3>
-          </div> */}
 
           {/* ── Desktop: phone + floating cards ── */}
           <div className="t-scene -mt-10">
